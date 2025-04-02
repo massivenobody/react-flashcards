@@ -24,7 +24,10 @@ function App() {
   return (
     <div className='app'>
       <h1>Flash Cards</h1>
-      <ProgressBar />
+      <ProgressBar
+        current={currentCard + 1}
+        total={cards.length}
+      />
       <FlashCard
         key={cards[currentCard].id}
         card={cards[currentCard]}
