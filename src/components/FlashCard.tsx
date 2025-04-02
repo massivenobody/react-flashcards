@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Card } from '../data/cards';
 
-function FlashCard({ card, onNextCard, onPreviousCard }: { card: Card, onNextCard: () => void, onPreviousCard: () => void }) {
+function FlashCard({ card, nextCard, previousCard }: { card: Card, nextCard: { exists: boolean, go: () => void }, previousCard: { exists: boolean, go: () => void } }) {
 
     const [flipped, setFlipped] = useState(false);
 
@@ -17,9 +17,9 @@ function FlashCard({ card, onNextCard, onPreviousCard }: { card: Card, onNextCar
         {cardContent}
       </div>
       <div className="card-controls">
-        <button className="card-controls-nav" onClick={onPreviousCard}>&lt; Previous</button>
+        <button className="card-controls-nav" onClick={previousCard.go}>&lt; Previous</button>
         <button className="card-controls-flip" onClick={handleFlip}>{flipped ? 'Hide Answer' : 'Show Answer'}</button>
-        <button className="card-controls-nav" onClick={onNextCard}>Next &gt;</button>
+        <button className="card-controls-nav" onClick={nextCard.go}>Next &gt;</button>
       </div>
     </div>
   )

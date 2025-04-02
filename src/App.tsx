@@ -8,16 +8,17 @@ function App() {
 
   const [currentCard, setCurrentCard] = useState(0);
 
-  const handleNextCard = () => {
-    if (currentCard < cards.length - 1) {
-      setCurrentCard(currentCard + 1);
-    }
+  const hasNextCard = currentCard < cards.length - 1;
+  const hasPreviousCard = currentCard > 0;
+
+  const nextCard = {
+    exists: hasNextCard,
+    go: () => {if (hasNextCard) setCurrentCard(currentCard + 1)}
   }
 
-  const handlePreviousCard = () => {
-    if (currentCard > 0) {
-      setCurrentCard(currentCard - 1);
-    }
+  const previousCard = {
+    exists: hasPreviousCard,
+    go: () => {if (hasPreviousCard) setCurrentCard(currentCard - 1)}
   }
 
   return (
@@ -27,8 +28,8 @@ function App() {
       <FlashCard
         key={cards[currentCard].id}
         card={cards[currentCard]}
-        onNextCard={handleNextCard}
-        onPreviousCard={handlePreviousCard}
+        nextCard={nextCard}
+        previousCard={previousCard}
       />
     </div>
   )
