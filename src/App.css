@@ -4,3 +4,32 @@
   padding: 2rem;
   text-align: center;
 }
+
+h1 {
+  text-align: left;
+}
+
+.app {
+  width: 85%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.card {
+  margin-top: 1rem;
+  border: 2.5px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.card-content {
+  width: 100%;
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-content h2 {
+  font-size: 2rem;
+}

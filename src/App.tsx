@@ -9,7 +9,7 @@ function App() {
   const [currentCard, setCurrentCard] = useState(0);
 
   return (
-    <div>
+    <div className='app'>
       <h1>Flash Cards</h1>
       <ProgressBar />
       <FlashCard card={cards[currentCard]} />
