@@ -8,10 +8,10 @@ function ProgressBar({ current, total }: { current: number, total: number}) {
           className="progress-bar-fill"
           style={{ width: `${progress}%` }}
         ></div>
-        <span className="progress-percentage">{progress}%</span>
       </div>
-      <div className="progress-bar-label">
-        {current} of {total}
+      <div className="progress-text">
+        <span className="progress-percentage">{progress}%</span>
+        <span className="progress-fraction">{current} of {total}</span>
       </div>
     </div>
   )
