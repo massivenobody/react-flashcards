@@ -3,6 +3,8 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+
+  --card-border-color: black;
 }
 
 h1 {
@@ -17,7 +19,7 @@ h1 {
 
 .card {
   margin-top: 1rem;
-  border: 2.5px solid #ccc;
+  border: 3px solid var(--card-border-color);
   border-radius: 8px;
   padding: 1rem;
 }
@@ -28,8 +30,44 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 2rem 0;
+  
 }
 
 .card-content h2 {
   font-size: 2rem;
+}
+
+.card-content p {
+  font-size: 1.2rem;
+  width: 85%;
+}
+
+.card-controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  & > * {
+    flex: 1;
+  }
+  & > :first-child {
+    text-align: left;
+  }
+  & > :last-child {
+    text-align: right;
+  }
+}
+
+button {
+  border: none;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: inherit;
+  cursor: pointer;
+  transition: background-color 0.25s
+}
+
+.card-controls-flip {
+  font-weight: 600;
 }
