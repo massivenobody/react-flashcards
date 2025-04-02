@@ -17,9 +17,9 @@ function FlashCard({ card, nextCard, previousCard }: { card: Card, nextCard: { e
         {cardContent}
       </div>
       <div className="card-controls">
-        <button className="card-controls-nav" onClick={previousCard.go}>&lt; Previous</button>
+        {previousCard.exists ? <button className="card-controls-nav" onClick={previousCard.go}>&lt; Previous</button> : <div></div>}
         <button className="card-controls-flip" onClick={handleFlip}>{flipped ? 'Hide Answer' : 'Show Answer'}</button>
-        <button className="card-controls-nav" onClick={nextCard.go}>Next &gt;</button>
+        {nextCard.exists ? <button className="card-controls-nav" onClick={nextCard.go}>Next &gt;</button> : <div></div>}
       </div>
     </div>
   )
